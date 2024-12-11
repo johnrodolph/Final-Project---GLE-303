@@ -91,6 +91,29 @@ if uploaded_file is not None:
                     fig, ax = plt.subplots()
                     sns.histplot(data_cleaned[col], kde=True, ax=ax)
                     st.pyplot(fig)
+                st.write("**Histogram Insights:**")
+                st.markdown(
+                    """
+                    - **Hindi**: If many students scored high, it might indicate that Hindi is relatively easier for students or well-taught. A cluster of low scores could point to difficulties in this subject.
+                    - **English**: Lower scores in English could suggest a language barrier or a need for enhanced teaching resources. High scores indicate proficiency in language skills.
+                    - **Science**: A skew towards lower scores might highlight that Science concepts are challenging for students. Balanced scores reflect effective learning strategies.
+                    - **Math**: High variability might indicate that some students excel while others struggle, emphasizing the need for targeted teaching methods.
+                    - **History**: High scores suggest effective memorization or understanding, while low scores might point to disinterest or difficulty with historical concepts.
+                    - **Geography**: Lower scores might indicate that spatial or map-reading skills need improvement. High scores show good conceptual understanding.
+                    - **Total**: A concentration in the middle range suggests average performance, while a bimodal distribution (two peaks) could indicate performance gaps.
+                    - **Results**: A high pass rate reflects overall success, whereas a significant fail rate highlights areas needing intervention.
+                    """
+                )
+                st.header("Conclusions")
+                st.markdown("""
+                - Subjects with consistent high scores indicate effective teaching or inherent student strengths.
+
+                - Subjects with low scores may need curriculum adjustments, better teaching aids, or additional focus.
+
+                - Analyzing the total scores helps gauge overall performance trends.
+
+                - A low pass rate or significant fail rate indicates systemic challenges.
+                """)
  
         elif selected_tab == "K-means Clustering":
             st.header("K-means Clustering")
