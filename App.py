@@ -190,7 +190,26 @@ if uploaded_file is not None:
         elif selected_tab == "Conclusions":
             st.header("Conclusions and Recommendations")
             st.write("Based on the clustering and regression analysis, here are the key takeaways:")
-            st.text_area("Key Takeaways", "", placeholder="Summarize your conclusions and actionable recommendations here.")
+            
+            st.subheader("Subject Independence")
+            st.markdown('''- Correlation Heatmap reveals weak correlation between individual subjects (mostly below 0.1). This suggests that performance in one subject doesn't strongly predict performance in others.''')
+            st.markdown('''- Students appear to have distinct strengths and weaknesses across different subjects.''')
+
+            st.subheader("Performance Distribution")
+            st.write("Mean scores across subjects are remarkably consistent, clustering around 50%:")
+            st.markdown('''- Hindi: 51.6%''')
+            st.markdown('''- English: 50.1%''')
+            st.markdown('''- Science: 49.4%''')
+            st.markdown('''- Maths: 49.6%''')
+            st.markdown('''- History: 49.0%''')
+            st.markdown('''- Geography: 50.0%''')
+
+            st.subheader("Student Clustering")
+            st.write("K-means clustering (k=3) identified distinct groups of students based on Hindi and English performance:")
+            st.markdown('''- High performers in both subjects (yellow cluster)''')
+            st.markdown('''- Strong Hindi but weaker English performance (purple cluster)''')
+            st.markdown('''- Weaker performance in both subjects (teal cluster)''')
+            st.write("This suggests potential language-based learning patterns.")
  
 else:
     st.write("Please upload a dataset to proceed.")
